@@ -2,12 +2,7 @@
  * Created by justinhu on 23/10/2017.
  */
 
-let dataArr=[
-    {   year:2017,month:10,date:23,
-        math:0, economics:0, computer:60, physics:0, physicalExercise:0,
-        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
-    },
-];
+let totalPoints=0, remainGiftPoints=0;
 console.log(dataArr[0].english);
 
 
@@ -46,6 +41,7 @@ function getAll(){
 
 function getLastweek(){
     let dataMain = dataMainZero;
+
     if(dataArr.length>=7){
         for(let i=dataArr.length-7; i<dataArr.length; i++){
             dataMain.math += dataArr[i].math;
@@ -75,24 +71,77 @@ function getLastweek(){
 }
 
 
-let yearData = getAll();
+let allData = getAll();
 let weekData = getLastweek();
 
-$(".main-progress>li").each(function() {
-    let id = $(this).attr('id');
-    if(id === "english"){
-        $(this).children(".bar").children(".achieved").css("width", ((yearData[id].value-weekData[id].value) / levelScore[id].value) * 800 + 'px');
-        $(this).children(".bar").children(".recent").css("width", ((weekData[id].value) / levelScore[id].value) * 800 + 'px');
-        $(this).children(".bar").children(".recent").children("p").html(yearData[id].value + '+' + weekData[id].value + 'points');
+function generateProgress(_this,allData,levelScore){
+    let thisClass = $(_this).attr('class');
+    let tmpLen = 0;
+    let tmpWidth = $(".bar").width();
+    if(thisClass === "english"){
+        tmpLen =$(_this).children(".bar").children(".achieved").css("width", ((allData[thisClass].value) / levelScore[thisClass].value) * tmpWidth + 'px');
+        $(_this).children(".bar").children(".achieved").css("width", ((allData[thisClass].value-weekData[thisClass].value) / levelScore[thisClass].value) * tmpWidth + 'px');
+        $(_this).children(".bar").children(".recent").css("width", ((weekData[thisClass].value) / levelScore[thisClass].value) * tmpWidth + 'px');
+        $(_this).children(".goal-score").html(levelScore[thisClass].value+" points");
 
-        $(this).children(".goal-score").html(levelScore[id].value+" points");
+        setTimeout(function(){
+            if(parseInt($(_this).children(".bar").children(".achieved").css("width"))> 100){
+                $(_this).children(".bar").children(".recent").children("p").css({"right":"10px", "color": "#fff"});
+            }
+            $(_this).children(".bar").children(".recent").children("p").html(allData[thisClass].value-weekData[thisClass].value + '+' + weekData[thisClass].value + 'points');
+        },1200);
     }else{
-        $(this).children(".bar").children(".achieved").css("width", ((yearData[id]-weekData[id]) / levelScore[id]) * 800 + 'px');
-        $(this).children(".bar").children(".recent").css("width", ((weekData[id]) / levelScore[id]) * 800 + 'px');
-        $(this).children(".bar").children(".recent").children("p").html(yearData[id] + '+' + weekData[id] + 'points');
+        $(_this).children(".bar").children(".achieved").css("width", ((allData[thisClass]-weekData[thisClass]) / levelScore[thisClass]) * tmpWidth + 'px');
+        $(_this).children(".bar").children(".recent").css("width", ((weekData[thisClass]) / levelScore[thisClass]) * tmpWidth + 'px');
+        $(_this).children(".goal-score").html(levelScore[thisClass]+" points");
 
-        $(this).children(".goal-score").html(levelScore[id]+" points");
+        setTimeout(function(){
+            if(parseInt($(_this).children(".bar").children(".achieved").css("width"))> 100){
+                $(_this).children(".bar").children(".recent").children("p").css({"right":"10px", "color": "#fff"});
+            }
+            $(_this).children(".bar").children(".recent").children("p").html(allData[thisClass]-weekData[thisClass] + '+' + weekData[thisClass] + 'points');
+        },1200);
     }
+}
 
-});
 
+
+$(".main-progress>li").each(function(){generateProgress(this,allData,levelScore);});
+$(".week-progress>li").each(function(){generateProgress(this,weekData,weekScore);});
+
+
+let weekScoreTotal = weekScore.math + weekScore.economics + weekScore.computer +weekScore.physics + weekScore.physicalExercise+ weekScore.english.value;
+
+$(".week-progress").siblings("h2").html("One Week Plan (" + weekScoreTotal + " points)");
+
+totalPoints = allData.math + allData.economics + allData.computer +allData.physics + allData.physicalExercise+ allData.english.value;
+
+$(".personal-data").find(".total-points").children("p").html(totalPoints);
+
+let giftHtmlArr = [];
+
+remainGiftPoints = totalPoints;
+for(let i = 0; i<giftList.length; i++){
+    remainGiftPoints -= giftList[i].value;
+    giftHtmlArr[i] = "<li>" + giftList[i].name + " (" + giftList[i].value + ")" +"</li>";
+}
+
+
+let giftHtmlStr = giftHtmlArr.join("");
+$(".personal-data").find(".gifts-box").html(
+    "<h4>Gift List: </h4>" + "<ul>" +  giftHtmlStr +"</ul>" +'<div class="remain-points"><h4>The remaining gift points</h4><p>'+remainGiftPoints+'</p></div>'
+);
+
+
+$(".personal-data-ability > ul >li").each(
+    function(){
+        let thisClass = $(this).attr('class');
+        if(thisClass === "english"){
+            $(this).children("p").html(allData[thisClass].value);
+        }else{
+            $(this).children("p").html(allData[thisClass]);
+        }
+
+
+    }
+);
