@@ -41,35 +41,24 @@ function getAll(){
 
 function getLastweek(){
     let dataMain = dataMainZero;
-
-    if(dataArr.length>=7){
-        for(let i=dataArr.length-7; i<dataArr.length; i++){
-            dataMain.math += dataArr[i].math;
-            dataMain.economics += dataArr[i].economics;
-            dataMain.computer += dataArr[i].computer;
-            dataMain.physics += dataArr[i].physics;
-            dataMain.physicalExercise +=  dataArr[i].physicalExercise;
-
-            dataArr[i].english.value = dataArr[i].english.hearing * 0.25 + dataArr[i].english.reading*0.25 + dataArr[i].english.speaking+  dataArr[i].english.word+ dataArr[i].english.seeing*0.5 + dataArr[i].english.grammar + dataArr[i].english.writing;
-            dataMain.english.value +=  dataArr[i].english.value;
-        }
-    }else if(dataArr.length<7){
-        for(let i=0; i<dataArr.length; i++){
-            dataMain.math += dataArr[i].math;
-            dataMain.economics += dataArr[i].economics;
-            dataMain.computer += dataArr[i].computer;
-            dataMain.physics += dataArr[i].physics;
-            dataMain.physicalExercise +=  dataArr[i].physicalExercise;
-            console.log(dataArr[i].english);
-            dataArr[i].english.value = dataArr[i].english.hearing * 0.25 + dataArr[i].english.reading*0.25 + dataArr[i].english.speaking+  dataArr[i].english.word+ dataArr[i].english.seeing*0.5 + dataArr[i].english.grammar + dataArr[i].english.writing;
-            console.log(dataArr[i].english);
-            dataMain.english.value +=  dataArr[i].english.value;
-        }
+    let len = dataArr.length%7;
+    if(len === 0 && dataArr.length!==0){
+        len =7;
     }
+    for(let i=0; i<len; i++){
+        dataMain.math += dataArr[i].math;
+        dataMain.economics += dataArr[i].economics;
+        dataMain.computer += dataArr[i].computer;
+        dataMain.physics += dataArr[i].physics;
+        dataMain.physicalExercise +=  dataArr[i].physicalExercise;
+        dataMain.others += dataArr[i].others;
+        dataMain.medicine +=  dataArr[i].medicine;
 
+        dataArr[i].english.value = dataArr[i].english.hearing * 0.25 + dataArr[i].english.reading*0.25 + dataArr[i].english.speaking+  dataArr[i].english.word+ dataArr[i].english.seeing*0.5 + dataArr[i].english.grammar + dataArr[i].english.writing;
+        dataMain.english.value +=  dataArr[i].english.value;
+    }
     return dataMain;
 }
-
 
 let allData = getAll();
 let weekData = getLastweek();
