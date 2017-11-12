@@ -7,6 +7,7 @@ let weekScore = {math:100, economics:50, computer:320, physics:20, physicalExerc
     english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,word:0,speaking:0,value:100}};
 // 礼物列表
 let giftList=[
+    {name:"Air Jordan 1 Rare Air", value:709},
     {name:"ikbc keyboard", value:328},
     {name:"SlamDunk Comic", value:228},
     {name:"Air Jordan 6 Sport Blue", value:1399},
@@ -17,6 +18,26 @@ let giftList=[
 ];
 // 每日学习时间记录
 let dataArr=[
+    {   year:2017,month:11,date:12,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:6,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
+    },
+    {   year:2017,month:11,date:11,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
+    },
+    {   year:2017,month:11,date:10,
+        math:33, economics:0, computer:0, physics:0, physicalExercise:7,
+        english:{hearing:0,reading:20,seeing:0,writing:0,grammar:1,speaking:0,word:1,value:0},
+    },
+    {   year:2017,month:11,date:9,
+        math:0, economics:0, computer:33, physics:0, physicalExercise:1,
+        english:{hearing:0,reading:33,seeing:0,writing:0,grammar:0,speaking:0,word:1,value:0},
+    },
+    {   year:2017,month:11,date:8,
+        math:2, economics:3, computer:60, physics:0, physicalExercise:7,
+        english:{hearing:0,reading:50,seeing:0,writing:0,grammar:0,speaking:0,word:2,value:0},
+    },
     {   year:2017,month:11,date:7,
         math:0, economics:0, computer:46, physics:0, physicalExercise:1,
         english:{hearing:0,reading:40,seeing:0,writing:0,grammar:16,speaking:0,word:2,value:0},
