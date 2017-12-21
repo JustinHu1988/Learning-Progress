@@ -228,3 +228,5 @@ let dataArr=[
         english:{hearing:4,reading:50,seeing:1,writing:0,grammar:0,speaking:0,word:2,value:0},
     },
 ];
+
+
