@@ -19,6 +19,14 @@ let giftList=[
 ];
 // 每日学习时间记录
 let dataArr=[
+    {   year:2018,month:1,date:20,
+        math:0, economics:0, computer:36, physics:0, physicalExercise:15,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:15,value:0},
+    },
+    {   year:2018,month:1,date:19,
+        math:0, economics:0, computer:45, physics:0, physicalExercise:1,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
+    },
     {   year:2018,month:1,date:18,
         math:0, economics:0, computer:54, physics:0, physicalExercise:7,
         english:{hearing:0,reading:20,seeing:0,writing:0,grammar:0,speaking:0,word:5,value:0},
