@@ -7,6 +7,7 @@ let weekScore = {math:100, economics:50, computer:320, physics:20, physicalExerc
     english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,word:0,speaking:0,value:100}};
 // 礼物列表
 let giftList=[
+    {name:"Air Jordan 1 KO Sport Blue", value:899},
     {name:"nintendo switch", value:3562},
     {name:"きゃらふぉるむ+ saber F/GO", value:289},
     {name:"Air Jordan 1 Rare Air", value:709},
@@ -21,6 +22,18 @@ let giftList=[
 
 // 每日学习时间记录
 let dataArr=[
+    {   year:2018,month:3,date:2,
+        math:0, economics:0, computer:10, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:10,word:20,value:0},
+    },
+    {   year:2018,month:3,date:1,
+        math:0, economics:0, computer:10, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:10,word:30,value:0},
+    },
+    {   year:2018,month:2,date:28,
+        math:0, economics:0, computer:20, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:10,word:20,value:0},
+    },
     {   year:2018,month:2,date:27,
         math:0, economics:0, computer:36, physics:0, physicalExercise:7,
         english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:10,word:20,value:0},
