@@ -27,7 +27,7 @@ let dataArr=[
         english:{hearing:0,reading:0,seeing:20,writing:0,grammar:0,speaking:10,word:1,value:0},
     },
     {   year:2018,month:3,date:10,
-        math:0, economics:0, computer:30, physics:0, physicalExercise:0,
+        math:0, economics:0, computer:30, physics:0, physicalExercise:7,
         english:{hearing:0,reading:0,seeing:20,writing:0,grammar:0,speaking:10,word:1,value:0},
     },
     {   year:2018,month:3,date:9,
