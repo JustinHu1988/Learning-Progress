@@ -22,6 +22,10 @@ let giftList=[
 
 // 每日学习时间记录
 let dataArr=[
+	{   year:2018,month:3,date:28,
+        math:0, economics:0, computer:30, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:8,writing:0,grammar:0,speaking:16,word:0,value:0},
+    },
 	{   year:2018,month:3,date:27,
         math:0, economics:0, computer:20, physics:0, physicalExercise:7,
         english:{hearing:0,reading:0,seeing:8,writing:0,grammar:0,speaking:0,word:0,value:0},
