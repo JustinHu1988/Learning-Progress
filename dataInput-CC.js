@@ -1,11 +1,11 @@
 /**
- * CC的学习记录
+ * Justin's study time record
  * @type {{math: number, economics: number, computer: number, physics: number, physicalExercise: number, english: {hearing: number, reading: number, seeing: number, writing: number, grammar: number, word: number, speaking: number, value: number}}}
  */
-// 本周目标设定
+// Weekly goal
 let weekScore = {math:100, economics:50, computer:320, physics:20, physicalExercise:24,
     english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,word:0,speaking:0,value:100}};
-// 礼物列表
+// Gift list
 let giftList=[
     {name:"Air Jordan 1 KO Sport Blue", value:899},
     {name:"nintendo switch", value:3562},
@@ -20,10 +20,10 @@ let giftList=[
     {name:"pspgo", value:990},
 ];
 
-// 每日学习时间记录
+// Daily study time records
 let dataArr=[
     {   year:2018,month:4,date:25,
-        math:0, economics:0, computer:22, physics:0, physicalExercise:10,
+        math:2, economics:0, computer:22, physics:0, physicalExercise:10,
         english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:13,word:0,value:0},
     },
     {   year:2018,month:4,date:25,
