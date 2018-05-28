@@ -7,6 +7,7 @@ let weekScore = {math:100, economics:50, computer:320, physics:20, physicalExerc
     english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,word:0,speaking:0,value:100}};
 // Gift list
 let giftList=[
+    {name:"PG 1/60 GN-0000+GNR-010", value:994},
     {name:"Air Jordan 1 KO Sport Blue", value:899},
     {name:"nintendo switch", value:3562},
     {name:"きゃらふぉるむ+ saber F/GO", value:289},
@@ -22,6 +23,34 @@ let giftList=[
 
 // Daily study time records
 let dataArr=[
+	{   year:2018,month:5,date:27,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:6,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
+    },
+    {   year:2018,month:5,date:26,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
+    },
+    {   year:2018,month:5,date:25,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:10,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:20,word:0,value:0},
+    },
+    {   year:2018,month:5,date:24,
+        math:0, economics:0, computer:20, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:20,word:0,value:0},
+    },
+    {   year:2018,month:5,date:23,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:20,word:0,value:0},
+    },
+    {   year:2018,month:5,date:22,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:0,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:20,word:0,value:0},
+    },
+    {   year:2018,month:5,date:21,
+        math:0, economics:0, computer:0, physics:0, physicalExercise:10,
+        english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:20,word:0,value:0},
+    },
 	{   year:2018,month:5,date:20,
         math:0, economics:0, computer:0, physics:0, physicalExercise:0,
         english:{hearing:0,reading:0,seeing:0,writing:0,grammar:0,speaking:0,word:0,value:0},
